@@ -1,0 +1,32 @@
+@startuml
+
+class Nota {
+  - spawnTime: int
+  - duration: int
+  - note: String
+  + getSpawnTime(): int
+  + getDuration(): int
+  + getNote(): String
+}
+
+class Music {
+  - name: String
+  - difficulty: String
+  - notes: List<Nota>
+  - tempo: Int
+  + getName(): String
+  + getDifficulty(): String
+  + getNotes(): List<Nota>
+  + addNota(n: Nota): void
+}
+static class Interpretator {
+  public static Play(Music music): void
+}
+static class playerController {
+  
+}
+
+Music "1" *-- "0..*" Nota : contains
+Music --> Interpretator
+
+@enduml
