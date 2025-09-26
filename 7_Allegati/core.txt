@@ -22,11 +22,13 @@ class Music {
 static class Interpretator {
   public static Play(Music music): void
 }
-static class playerController {
-  
+class playerController {
+  - keymap: Dictionary<string, string>
+  + ChangeKey(string note, string key): void
+  + PlayNote(string key): void
 }
 
-Music "1" *-- "0..*" Nota : contains
+Music  *-- Nota
 Music --> Interpretator
 
 @enduml
