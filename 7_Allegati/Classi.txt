@@ -18,6 +18,7 @@ class Music {
   + getDifficulty(): String
   + getNotes(): List<Nota>
   + addNota(n: Nota): void
+  + calcolaPunteggio(Music music): int punteggio
 }
 static class Interpretator {
   public static Play(Music music): void
@@ -30,5 +31,6 @@ class playerController {
 
 Music  *-- Nota
 Music --> Interpretator
+Music --> playerController
 
 @enduml
