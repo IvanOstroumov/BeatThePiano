@@ -1,7 +1,7 @@
 
 namespace BeatThePiano
 {
-    enum Level 
+    public enum Difficulty
     {
         Facile,
         Medio,

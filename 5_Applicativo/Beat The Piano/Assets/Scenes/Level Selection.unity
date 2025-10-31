@@ -153,6 +153,7 @@ MonoBehaviour:
   normalSprite: {fileID: -7670485267309540912, guid: f19cafe0a66ca7d4fae331a82b6462cc, type: 3}
   hoverSprite: {fileID: -7670485267309540912, guid: f19cafe0a66ca7d4fae331a82b6462cc, type: 3}
   sceneName: 
+  scaleFactor: 1.1
 --- !u!61 &44601241
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -303,6 +304,7 @@ MonoBehaviour:
   normalSprite: {fileID: -7670485267309540912, guid: f19cafe0a66ca7d4fae331a82b6462cc, type: 3}
   hoverSprite: {fileID: -7670485267309540912, guid: f19cafe0a66ca7d4fae331a82b6462cc, type: 3}
   sceneName: 
+  scaleFactor: 1.1
 --- !u!61 &329611971
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -453,6 +455,7 @@ MonoBehaviour:
   normalSprite: {fileID: -7670485267309540912, guid: f19cafe0a66ca7d4fae331a82b6462cc, type: 3}
   hoverSprite: {fileID: -7670485267309540912, guid: f19cafe0a66ca7d4fae331a82b6462cc, type: 3}
   sceneName: 
+  scaleFactor: 1.1
 --- !u!61 &375309929
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1052,6 +1055,7 @@ MonoBehaviour:
   normalSprite: {fileID: 6208176927266180224, guid: 8cd370188abdb7e419745d11fc3bd817, type: 3}
   hoverSprite: {fileID: 6208176927266180224, guid: 8cd370188abdb7e419745d11fc3bd817, type: 3}
   sceneName: Game
+  scaleFactor: 1.1
 --- !u!61 &606416013
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1473,6 +1477,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Back_Arrow
       objectReference: {fileID: 0}
+    - target: {fileID: 7996081986426776266, guid: ac5a4ba2584aa7046b769ad6cfd0e055, type: 3}
+      propertyPath: scaleFactor
+      value: 1.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1700,6 +1708,7 @@ MonoBehaviour:
   normalSprite: {fileID: -7670485267309540912, guid: f19cafe0a66ca7d4fae331a82b6462cc, type: 3}
   hoverSprite: {fileID: -7670485267309540912, guid: f19cafe0a66ca7d4fae331a82b6462cc, type: 3}
   sceneName: 
+  scaleFactor: 1.1
 --- !u!61 &1321373523
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1937,6 +1946,7 @@ MonoBehaviour:
   normalSprite: {fileID: 5964616373300166750, guid: 8d8761527eee9344ba74d8a39f9889ea, type: 3}
   hoverSprite: {fileID: 5964616373300166750, guid: 8d8761527eee9344ba74d8a39f9889ea, type: 3}
   sceneName: 
+  scaleFactor: 1.1
 --- !u!61 &1594353952
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2247,6 +2257,7 @@ MonoBehaviour:
   normalSprite: {fileID: -7670485267309540912, guid: f19cafe0a66ca7d4fae331a82b6462cc, type: 3}
   hoverSprite: {fileID: -7670485267309540912, guid: f19cafe0a66ca7d4fae331a82b6462cc, type: 3}
   sceneName: 
+  scaleFactor: 1.1
 --- !u!61 &1930048169
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2397,6 +2408,7 @@ MonoBehaviour:
   normalSprite: {fileID: -7670485267309540912, guid: f19cafe0a66ca7d4fae331a82b6462cc, type: 3}
   hoverSprite: {fileID: -7670485267309540912, guid: f19cafe0a66ca7d4fae331a82b6462cc, type: 3}
   sceneName: 
+  scaleFactor: 1.1
 --- !u!61 &1932061486
 BoxCollider2D:
   m_ObjectHideFlags: 0

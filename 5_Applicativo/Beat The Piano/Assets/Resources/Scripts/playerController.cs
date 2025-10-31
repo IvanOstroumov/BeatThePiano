@@ -1,8 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+
 namespace BeatThePiano
 {
-    public class playerController
+    public static class playerController
     {
-        
     }
 }

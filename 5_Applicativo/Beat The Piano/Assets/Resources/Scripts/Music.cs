@@ -37,9 +37,47 @@ namespace BeatThePiano
 
        public void addNote(Nota nota)
        {
-           _notes.Add(nota);
+           if (nota != null)
+           { 
+               Notes.Add(nota);
+           }
        }
 
-   } 
+       public Music(string name, Difficulty difficulty, int tempo)
+       {
+           _name = name;
+           _difficulty = difficulty;
+           _tempo = tempo;
+           _notes = new List<Nota>();
+       }
+       
+       public float calcolaPunteggio(List<Nota> playedNotes, float timingOffset = 0.2f)
+       {
+           if (playedNotes == null || playedNotes.Count == 0)
+               return 0f;
+
+           int correct = 0;
+           
+           foreach (Nota original in _notes)
+           {
+               foreach (Nota played in playedNotes)
+               {
+                   bool noteMatches = original.Note == played.Note;
+                   bool timingMatches = Mathf.Abs(original.SpawnTime - played.SpawnTime) <= timingOffset;
+                   
+                   bool durationMatches = Mathf.Abs(original.Duration - played.Duration) <= timingOffset;
+
+                   if (noteMatches && timingMatches && durationMatches)
+                   {
+                       correct++;
+                       break; 
+                   }
+               }
+           }
+
+           return (float)correct / _notes.Count;
+       }
+
+   }
 }
 

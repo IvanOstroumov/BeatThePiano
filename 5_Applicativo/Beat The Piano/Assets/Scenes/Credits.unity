@@ -153,7 +153,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.9036, y: -27.968702}
+  m_AnchoredPosition: {x: -14, y: -11}
   m_SizeDelta: {x: 813.7163, y: 476.8896}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &842632181
@@ -188,10 +188,12 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 1.2
   m_Text: "Credits:\nCode - Ivan Ostroumov\nSprites - Ivan Ostroumov & web\nName
-    - Jan Vidal\nSongs:\nLvL1  - \nLvL2  - \nLvL3  - \nLvL4  - \nLvL5  - \nLvL6 
-    - \nLvL7  - \nLvL8  - \nLvL9  - \nLvL10 - "
+    - Jan Vidal\nSongs:\nLvL1  -  Mary Had a Little Lamb\nLvL2  -  Hot Cross Buns\nLvL3 
+    - Twinkle Twinkle little star\nLvL4  - Ode to Joy - Beethoven\nLvL5  - Fur Elise
+    - Beethoven\nLvL6  - Maple Leaf Rag - Scott Joplin\nLvL7  - Flight of the bumblebee
+    -  \n            Rimsky-Korsakov"
 --- !u!222 &842632182
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -656,6 +658,10 @@ PrefabInstance:
     - target: {fileID: 2578728670885526863, guid: ac5a4ba2584aa7046b769ad6cfd0e055, type: 3}
       propertyPath: m_Name
       value: Back_Arrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 7996081986426776266, guid: ac5a4ba2584aa7046b769ad6cfd0e055, type: 3}
+      propertyPath: scaleFactor
+      value: 1.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
