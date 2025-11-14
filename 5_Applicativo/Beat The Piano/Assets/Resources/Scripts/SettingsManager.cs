@@ -16,17 +16,16 @@ public class SettingsManager : MonoBehaviour
 
     void Start()
     {
-        volumeSlider.value = PlayerPrefs.GetFloat("volume", 1f);
+        volumeSlider.value = PlayerPrefs.GetFloat("volume");
         volumeSlider.onValueChanged.AddListener(SetVolume);
         
-        colorSlider.value = PlayerPrefs.GetFloat("color", 0.23f);
+        colorSlider.value = PlayerPrefs.GetFloat("color");
         colorSlider.onValueChanged.AddListener(SetColor);
         spriteRenderer = colorDisplay.GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-        
     }
     
     void SetVolume(float v)

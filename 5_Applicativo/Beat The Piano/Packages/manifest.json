@@ -58,6 +58,14 @@
         "com.judahperez.hsvcolorpicker"
       ],
       "overrideBuiltIns": true
+    },
+    {
+      "name": "OpenUPM",
+      "url": "https://package.openupm.com/",
+      "scopes": [
+        "com.sabresaurus"
+      ],
+      "overrideBuiltIns": true
     }
   ]
 }

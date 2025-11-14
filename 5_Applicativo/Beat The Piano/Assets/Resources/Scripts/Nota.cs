@@ -29,16 +29,25 @@ namespace BeatThePiano
             set { _note = value; }
         }
 
-        public Nota(float spawnTime, float duration, string note)
+        private int _octave;
+
+        public int Octave
+        {
+            get { return _octave; }
+            set { _octave = value; }
+        }
+
+        public Nota(float spawnTime, float duration, string note, int octave)
         {
             _spawnTime = spawnTime;
             _duration = duration;
             _note = note;
+            _octave = octave;
         }
         
         public override string ToString()
         {
-            return $"Nota: {Note}, Spawn: {SpawnTime}, Duration: {Duration}";
+            return $"Nota: {Note}, Spawn: {SpawnTime}, Duration: {Duration},  Octave: {Octave}";;
         }
     }
 
@@ -60,7 +69,7 @@ namespace BeatThePiano
                 float endSeconds = (float)end.TotalMicroseconds / 1_000_000f;
                 float duration = endSeconds - startSeconds;
 
-                notas.Add(new Nota(startSeconds, duration, note.NoteName.ToString()));
+                notas.Add(new Nota(startSeconds, duration, note.NoteName.ToString(), note.Octave));
             }
 
             return notas;

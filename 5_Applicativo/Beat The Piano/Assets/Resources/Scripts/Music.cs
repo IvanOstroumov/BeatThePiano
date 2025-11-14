@@ -35,6 +35,13 @@ namespace BeatThePiano
            set { _notes = value; }
        }
 
+       private string _path;
+       public string Path
+       {
+           get { return _path; }
+           set { _path = value; }
+       }
+
        public void addNote(Nota nota)
        {
            if (nota != null)
@@ -43,12 +50,13 @@ namespace BeatThePiano
            }
        }
 
-       public Music(string name, Difficulty difficulty, int tempo)
+       public Music(string name, Difficulty difficulty, int tempo, string path)
        {
            _name = name;
            _difficulty = difficulty;
            _tempo = tempo;
-           _notes = new List<Nota>();
+           _path = path;
+           _notes = MidiConverter.ConvertMidiToNota(path);
        }
        
        public float calcolaPunteggio(List<Nota> playedNotes, float timingOffset = 0.2f)
@@ -63,7 +71,7 @@ namespace BeatThePiano
                foreach (Nota played in playedNotes)
                {
                    bool noteMatches = original.Note == played.Note;
-                   bool timingMatches = Mathf.Abs(original.SpawnTime - played.SpawnTime) <= timingOffset;
+                   bool timingMatches = Mathf.Abs(original.SpawnTime - played.SpawnTime - 2.42f) <= timingOffset;
                    
                    bool durationMatches = Mathf.Abs(original.Duration - played.Duration) <= timingOffset;
 

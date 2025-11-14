@@ -1,0 +1,7 @@
+Nota: D, Spawn: 3.160272, Duration: 0.2088916,  Octave: 4
+Nota: C, Spawn: 3.480094, Duration: 0.1760421,  Octave: 4
+Nota: D, Spawn: 3.752692, Duration: 0.1437912,  Octave: 4
+
+Nota: E, Spawn: 0.00125, Duration: 0.59875,  Octave: 4
+Nota: D, Spawn: 0.60125, Duration: 0.5987501,  Octave: 4
+Nota: C, Spawn: 1.20125, Duration: 0.59875,  Octave: 4

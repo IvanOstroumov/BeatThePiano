@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cec9fa31100c6154b81b9ff43a7fa665
+guid: 0ab08bc6aae56b14d8ec0665cdc12f91
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5199979006384268662
-    second: Star_0
+      213: -4045546689903754838
+    second: MiddleGround_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Star_0
+      name: MiddleGround_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 400
-        height: 384
+        x: 35
+        y: 106
+        width: 289
+        height: 148
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 675e50b0b590a2840800000000000000
-      internalID: 5199979006384268662
+      spriteID: aa1870248b45bd7c0800000000000000
+      internalID: -4045546689903754838
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3ae784c97c2e5f04baebe7671f3ac1e8
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Star_0: 5199979006384268662
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
