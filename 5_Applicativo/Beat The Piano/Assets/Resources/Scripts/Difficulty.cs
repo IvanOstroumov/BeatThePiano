@@ -1,4 +1,3 @@
-
 namespace BeatThePiano
 {
     public enum Difficulty

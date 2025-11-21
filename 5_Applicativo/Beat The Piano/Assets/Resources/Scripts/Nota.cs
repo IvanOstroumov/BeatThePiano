@@ -9,20 +9,23 @@ namespace BeatThePiano
     public class Nota
     {
         private float _spawnTime;
+
         public float SpawnTime
         {
             get { return _spawnTime; }
             set { _spawnTime = value; }
         }
-        
+
         private float _duration;
+
         public float Duration
         {
             get { return _duration; }
             set { _duration = value; }
         }
-        
+
         private string _note;
+
         public string Note
         {
             get { return _note; }
@@ -44,10 +47,11 @@ namespace BeatThePiano
             _note = note;
             _octave = octave;
         }
-        
+
         public override string ToString()
         {
-            return $"Nota: {Note}, Spawn: {SpawnTime}, Duration: {Duration},  Octave: {Octave}";;
+            return $"Nota: {Note}, Spawn: {SpawnTime}, Duration: {Duration},  Octave: {Octave}";
+            ;
         }
     }
 
@@ -76,4 +80,3 @@ namespace BeatThePiano
         }
     }
 }
-

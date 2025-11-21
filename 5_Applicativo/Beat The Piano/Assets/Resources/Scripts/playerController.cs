@@ -6,18 +6,30 @@ namespace BeatThePiano
 {
     public class playerController : MonoBehaviour
     {
+        //Dizionario che contiene in se le note che l'utente sta tenendo premute
         private Dictionary<KeyCode, float> activeNotes = new Dictionary<KeyCode, float>();
+        //Lista delle note suonate
         public List<Nota> playedNotes = new List<Nota>();
+        public Music selected;
+
+        void Start()
+        {
+            Manager manager = new Manager();
+            selected = manager.getMusicById(PlayerPrefs.GetInt("SelectedLevel"));
+        }
 
         void Update()
         {
+            //Se il livello non È finito
             if (!Interpretator.isDone)
             {
+                
                 foreach (var entry in KeyRemapper.notaKey)
                 {
                     KeyCode key = entry.Key;
                     string noteName = entry.Value;
 
+                    //Controlla se il tasto è schiacciato, se si lo inserisce nel dizionario
                     if (Input.GetKeyDown(key))
                     {
                         activeNotes[key] = Time.time;
@@ -25,6 +37,7 @@ namespace BeatThePiano
                         tasto.transform.localScale = tasto.transform.localScale * 1.2f;
                     }
 
+                    //Controlla se l'utente a smesso di premere un tasto, allora istanzia una nota e la salva nella lista delle note suonate
                     if (Input.GetKeyUp(key))
                     {
                         float start = activeNotes[key];
@@ -33,9 +46,9 @@ namespace BeatThePiano
                         int octave = GetOctave(noteName);
                         string cleanNote = RemovePrefix(noteName);
 
-                        Nota nota = new Nota(start, duration, cleanNote, octave);
+                        Nota nota = new Nota(start - 1.8f, duration * 2, cleanNote, octave);
                         playedNotes.Add(nota);
-                        
+
                         GameObject tasto = GameObject.Find(noteName);
                         tasto.transform.localScale = tasto.transform.localScale / 1.2f;
 
@@ -45,18 +58,39 @@ namespace BeatThePiano
             }
             else
             {
-                //Caricamento di tutte le musiche
-                Music firstMusic = new Music("First-Easy", Difficulty.Facile, 100, "./Assets/Resources/Sounds/midi/first-easy.mid");
-                Music secondMusic = new Music("Second-Easy", Difficulty.Facile, 90, "./Assets/Resources/Sounds/midi/second-easy.mid");
-                Music thirdMusic = new Music("First-Medium", Difficulty.Medio, 100, "./Assets/Resources/Sounds/midi/first-medium.mid");
-                Music fourthMusic = new Music("Second-Medium", Difficulty.Medio, 100, "./Assets/Resources/Sounds/midi/second-medium.mid");
-                Music fifthMusic = new Music("First-Hard", Difficulty.Difficile, 120, "./Assets/Resources/Sounds/midi/first-hard.mid");
-                Music sixthMusic = new Music("Second-Hard", Difficulty.Difficile, 120, "./Assets/Resources/Sounds/midi/second-hard.mid");
-                Music seventhMusic = new Music("First-Impossible", Difficulty.Difficilissimo, 180, "./Assets/Resources/Sounds/midi/first-impossible.mid");
-                Debug.Log(firstMusic.calcolaPunteggio(GetPlayedNotes()));
+                //Salva il punteggio se È il migliore subito
+                float punteggio = selected.calcolaPunteggio(GetPlayedNotes());
+                if (PlayerPrefs.GetFloat("Punteggio_" + selected.Name) < punteggio)
+                {
+                    PlayerPrefs.SetFloat("Punteggio_" + selected.Name, punteggio);
+                }
+
+                //Converte il punteggio in stelle
+                GameObject star1 = GameObject.Find("FullStar_1");
+                GameObject star2 = GameObject.Find("FullStar_2");
+                GameObject star3 = GameObject.Find("FullStar_3");
+                if (punteggio <= 0.33 && punteggio > 0.01)
+                {
+                    star2.GetComponent<SpriteRenderer>().enabled = false;
+                    star3.GetComponent<SpriteRenderer>().enabled = false;
+                }
+                else if (punteggio > 0.33 && punteggio <= 0.66)
+                {
+                    star3.GetComponent<SpriteRenderer>().enabled = false;
+                }
+                else if (punteggio > 0.66 && punteggio <= 1)
+                {
+                }
+                else
+                {
+                    star1.GetComponent<SpriteRenderer>().enabled = false;
+                    star2.GetComponent<SpriteRenderer>().enabled = false;
+                    star3.GetComponent<SpriteRenderer>().enabled = false;
+                }
             }
         }
 
+        //Ritorna in quale ottava è la nota
         int GetOctave(string note)
         {
             if (note.StartsWith("2"))
@@ -64,6 +98,7 @@ namespace BeatThePiano
             return 4;
         }
 
+        //Converte la scrittura del nome della nota in quella normale
         string RemovePrefix(string note)
         {
             if (note.StartsWith("2"))

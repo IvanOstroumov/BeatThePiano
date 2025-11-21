@@ -145,7 +145,7 @@ Transform:
   m_GameObject: {fileID: 12348872}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.3587507, z: -2}
+  m_LocalPosition: {x: 0, y: 0.3587507, z: -1}
   m_LocalScale: {x: 0.16152771, y: 0.14564793, z: 0.7518464}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -390,8 +390,8 @@ Transform:
   m_GameObject: {fileID: 24217302}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.642, y: 0.19993, z: -1}
-  m_LocalScale: {x: 0.09571776, y: 0.084524214, z: 2.0737512}
+  m_LocalPosition: {x: 0.648, y: 0.187, z: 0}
+  m_LocalScale: {x: 0.106486, y: 0.08875042, z: 2.0737512}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1601366166}
@@ -1106,8 +1106,8 @@ Transform:
   m_GameObject: {fileID: 388578764}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.644, y: 0.19993, z: -1}
-  m_LocalScale: {x: 0.09571776, y: 0.084524214, z: 2.0737512}
+  m_LocalPosition: {x: -0.644, y: 0.187, z: 0}
+  m_LocalScale: {x: 0.09930718, y: 0.089886226, z: 2.0737512}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1601366166}
@@ -1562,7 +1562,7 @@ Transform:
   m_GameObject: {fileID: 544910557}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6445242, y: 0.18932286, z: -2}
+  m_LocalPosition: {x: -0.6445242, y: 0.18932286, z: -1}
   m_LocalScale: {x: 0.102500826, y: 0.09242397, z: 0.4771}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2412,6 +2412,7 @@ GameObject:
   - component: {fileID: 860950849}
   - component: {fileID: 860950851}
   - component: {fileID: 860950850}
+  - component: {fileID: 860950852}
   m_Layer: 0
   m_Name: RetryButton
   m_TagString: Untagged
@@ -2535,6 +2536,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &860950852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860950848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 936f47531323b3247aee75cef07b97e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalSprite: {fileID: 5207804079435638006, guid: e6e73d6ad0a7cb84391a1126d11c1bab, type: 3}
+  hoverSprite: {fileID: 5207804079435638006, guid: e6e73d6ad0a7cb84391a1126d11c1bab, type: 3}
+  sceneName: Game
+  scaleFactor: 1.1
 --- !u!1 &918294484
 GameObject:
   m_ObjectHideFlags: 0
@@ -3215,7 +3232,7 @@ Transform:
   m_GameObject: {fileID: 1129401147}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.64667255, y: 0.18932286, z: -2}
+  m_LocalPosition: {x: 0.64667255, y: 0.18932286, z: -1}
   m_LocalScale: {x: 0.102500826, y: 0.09242397, z: 0.4771}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4477,8 +4494,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 388578765}
-  - {fileID: 1648388382}
   - {fileID: 24217303}
+  - {fileID: 1648388382}
   m_Father: {fileID: 1379439260}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1601512490
@@ -4668,7 +4685,7 @@ Transform:
   m_GameObject: {fileID: 1648388381}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.006, y: 0.362, z: -1}
+  m_LocalPosition: {x: 0.006, y: 0.362, z: 0}
   m_LocalScale: {x: 0.16029853, y: 0.14155355, z: 3.4729111}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5335,6 +5352,7 @@ GameObject:
   - component: {fileID: 2082181030}
   - component: {fileID: 2082181032}
   - component: {fileID: 2082181031}
+  - component: {fileID: 2082181033}
   m_Layer: 0
   m_Name: NextLevelButton
   m_TagString: Untagged
@@ -5458,6 +5476,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2082181033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082181029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 936f47531323b3247aee75cef07b97e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalSprite: {fileID: 6208176927266180224, guid: 8cd370188abdb7e419745d11fc3bd817, type: 3}
+  hoverSprite: {fileID: 6208176927266180224, guid: 8cd370188abdb7e419745d11fc3bd817, type: 3}
+  sceneName: Game
+  scaleFactor: 1.1
 --- !u!1 &2142705289
 GameObject:
   m_ObjectHideFlags: 0

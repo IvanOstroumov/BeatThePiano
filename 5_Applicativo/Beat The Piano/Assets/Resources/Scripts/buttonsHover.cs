@@ -4,20 +4,17 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(SpriteRenderer), typeof(Collider2D))]
 public class buttonHover : MonoBehaviour
 {
-    [Header("Sprites")]
-    public Sprite normalSprite;
+    [Header("Sprites")] public Sprite normalSprite;
     public Sprite hoverSprite;
 
-    [Header("Scene to Load")]
-    public string sceneName; 
-    
-    [Header("Zoom ratio")]
-    public float scaleFactor = 1.1f;
-    
+    [Header("Scene to Load")] public string sceneName;
+
+    [Header("Zoom ratio")] public float scaleFactor = 1.1f;
+
     private SpriteRenderer spriteRenderer;
     private Vector3 scalaOriginale;
 
-    void Start() 
+    void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = normalSprite;
@@ -27,7 +24,7 @@ public class buttonHover : MonoBehaviour
     void OnMouseEnter()
     {
         spriteRenderer.sprite = hoverSprite;
-        transform.localScale = scalaOriginale * scaleFactor; 
+        transform.localScale = scalaOriginale * scaleFactor;
     }
 
     void OnMouseExit()

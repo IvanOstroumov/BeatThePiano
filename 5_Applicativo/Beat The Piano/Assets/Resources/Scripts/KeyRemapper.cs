@@ -5,17 +5,23 @@ using System.Collections.Generic;
 
 public class KeyRemapper : MonoBehaviour
 {
+    //Variabili che servono per capire in che situazione ci si trova 
     private PianoKey keyBeingRemapped = null;
     private bool waitingForKey = false;
+
+    //Dizionario che associa tasto su tastiera e nota
     public static Dictionary<KeyCode, string> notaKey = new Dictionary<KeyCode, string>
     {
-        {KeyCode.Tab, "C"}, {KeyCode.Q, "D"}, {KeyCode.W, "E"}, {KeyCode.E, "F"}, {KeyCode.R, "G"},
-        {KeyCode.T, "A"}, {KeyCode.Y, "B"}, {KeyCode.U, "2C"}, {KeyCode.I, "2D"}, {KeyCode.O, "2E"},
-        {KeyCode.P, "2F"}, {KeyCode.Delete, "2G"}, {KeyCode.End, "2A"}, {KeyCode.PageDown, "2B"},
-        {KeyCode.Alpha1, "CSharp"}, {KeyCode.Alpha2, "DSharp"}, {KeyCode.Alpha3, "FSharp"}, {KeyCode.Alpha4, "GSharp"}, {KeyCode.Alpha5, "ASharp"},
-        {KeyCode.Alpha6, "2CSharp"}, {KeyCode.Alpha7, "2DSharp"}, {KeyCode.Alpha8, "2FSharp"}, {KeyCode.Alpha9, "2GSharp"}, {KeyCode.Alpha0, "2ASharp"}
+        { KeyCode.Tab, "C" }, { KeyCode.Q, "D" }, { KeyCode.W, "E" }, { KeyCode.E, "F" }, { KeyCode.R, "G" },
+        { KeyCode.T, "A" }, { KeyCode.Y, "B" }, { KeyCode.U, "2C" }, { KeyCode.I, "2D" }, { KeyCode.O, "2E" },
+        { KeyCode.P, "2F" }, { KeyCode.Delete, "2G" }, { KeyCode.End, "2A" }, { KeyCode.PageDown, "2B" },
+        { KeyCode.Alpha1, "CSharp" }, { KeyCode.Alpha2, "DSharp" }, { KeyCode.Alpha3, "FSharp" },
+        { KeyCode.Alpha4, "GSharp" }, { KeyCode.Alpha5, "ASharp" },
+        { KeyCode.Alpha6, "2CSharp" }, { KeyCode.Alpha7, "2DSharp" }, { KeyCode.Alpha8, "2FSharp" },
+        { KeyCode.Alpha9, "2GSharp" }, { KeyCode.Alpha0, "2ASharp" }
     };
 
+    //Lista di note
     public static List<string> notes = new List<string>
     {
         "C", "D", "E", "F", "G", "A", "B",
@@ -29,12 +35,17 @@ public class KeyRemapper : MonoBehaviour
     {
         aggiornaTasti();
     }
-    public static void aggiornaTasti(){
+
+    //Funzione che cerca nei PlayerPrefs i tasti gia rimappati e gli carica sul dizionario
+    public static void aggiornaTasti()
+    {
         foreach (string note in notes)
         {
             if (PlayerPrefs.HasKey(note))
             {
                 string keyString = PlayerPrefs.GetString(note);
+                
+                //Prova a trasformare il contenuto della PlayerPref in un tasto KeyCode, se riesce lo salva come key
                 if (System.Enum.TryParse<KeyCode>(keyString, out KeyCode key))
                 {
                     notaKey[key] = note;
@@ -43,8 +54,11 @@ public class KeyRemapper : MonoBehaviour
             }
         }
     }
+
     void Update()
     {
+        //Funzione che quando clicchi col mouse, crea un raggio dove l'hai creata e controlla se ha colpito qualche GO con la componente PianoKey,
+        //Se si, salva quale nota si vuole rimappare e passa al prossimo blocco di codice
         if (Input.GetMouseButtonDown(0) && !waitingForKey)
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -62,16 +76,20 @@ public class KeyRemapper : MonoBehaviour
                 }
             }
         }
-        
+
+        //Funzione che assegna il tasto che hai schiacciato (non LMB) alla nota scelta prima 
         if (waitingForKey && Input.anyKeyDown)
         {
             foreach (KeyCode k in Enum.GetValues(typeof(KeyCode)))
             {
                 if (Input.GetKeyDown(k) && k != KeyCode.Mouse0)
                 {
-                    keyBeingRemapped.key = k;
-                    PlayerPrefs.SetString(keyBeingRemapped.noteName, k.ToString());
-                    Debug.Log($"{keyBeingRemapped.noteName} rimappato a {k}");
+                    if (notaKey.ContainsKey(k))
+                    {
+                        string oldNote = notaKey[k];
+                        PlayerPrefs.DeleteKey(oldNote);
+                    }
+
                     KeyCode oldKey = KeyCode.None;
                     foreach (var pair in notaKey)
                     {
@@ -86,7 +104,13 @@ public class KeyRemapper : MonoBehaviour
                     {
                         notaKey.Remove(oldKey);
                     }
+
                     notaKey[k] = keyBeingRemapped.noteName;
+                    keyBeingRemapped.key = k;
+                    PlayerPrefs.SetString(keyBeingRemapped.noteName, k.ToString());
+                    PlayerPrefs.Save();
+
+                    Debug.Log($"{keyBeingRemapped.noteName} rimappato a {k}");
                     waitingForKey = false;
                     keyBeingRemapped = null;
                     break;
