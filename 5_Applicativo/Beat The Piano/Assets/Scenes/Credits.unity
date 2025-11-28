@@ -153,7 +153,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14, y: -11}
+  m_AnchoredPosition: {x: 16, y: -26}
   m_SizeDelta: {x: 813.7163, y: 476.8896}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &842632181
@@ -189,11 +189,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.2
-  m_Text: "Credits:\nCode - Ivan Ostroumov\nSprites - Ivan Ostroumov & web\nName
-    - Jan Vidal\nSongs:\nLvL1  -  Mary Had a Little Lamb\nLvL2  -  Hot Cross Buns\nLvL3 
-    - Twinkle Twinkle little star\nLvL4  - Ode to Joy - Beethoven\nLvL5  - Fur Elise
-    - Beethoven\nLvL6  - Maple Leaf Rag - Scott Joplin\nLvL7  - Flight of the bumblebee
-    -  \n            Rimsky-Korsakov"
+  m_Text: "Credits:\r\nCode - Ivan Ostroumov\r\nSprites - Ivan Ostroumov & web\r\nName
+    - Jan Vidal\r\nSongs:\r\nLvL1 - Mary Had a Little Lamb\r\nLvL2 - Hot Cross Buns\r\nLvL3
+    - Twinkle Twinkle little star\r\nLvL4 - Ode to Joy - Beethoven\r\nLvL5 - Fur
+    Elise - Beethoven\r\nLvL6 - Maple Leaf Rag - Scott Joplin\r\nLvL7 - Flight of
+    the bumblebee -  \r\n            Rimsky-Korsakov"
 --- !u!222 &842632182
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -250,10 +250,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1024, y: 576}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -273,7 +273,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -403,6 +403,7 @@ GameObject:
   - component: {fileID: 1867723112}
   - component: {fileID: 1867723111}
   - component: {fileID: 1867723114}
+  - component: {fileID: 1867723115}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -528,6 +529,19 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &1867723115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867723110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4fb4d9bc641729468fc1c3699939cef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetAspect: 1.7777778
 --- !u!1 &2103625632
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,7 +631,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1223063160986655208, guid: ac5a4ba2584aa7046b769ad6cfd0e055, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.61
+      value: -8.1
       objectReference: {fileID: 0}
     - target: {fileID: 1223063160986655208, guid: ac5a4ba2584aa7046b769ad6cfd0e055, type: 3}
       propertyPath: m_LocalPosition.y
@@ -681,8 +695,12 @@ PrefabInstance:
       value: Background
       objectReference: {fileID: 0}
     - target: {fileID: 7482467680319076222, guid: 1b1d59fc3f7587844885b7db845baae8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 17.873634
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482467680319076222, guid: 1b1d59fc3f7587844885b7db845baae8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.0489
       objectReference: {fileID: 0}
     - target: {fileID: 7482467680319076222, guid: 1b1d59fc3f7587844885b7db845baae8, type: 3}
       propertyPath: m_LocalPosition.y

@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +9,10 @@ public class DeleteButton : MonoBehaviour
     public Sprite hoverSprite;
 
     [Header("Zoom ratio")] public float scaleFactor = 1.1f;
+
+    [Header("What to delete?")] [Description("0: All, 1: KeyMap")]
+    public int select;
+    
 
     private SpriteRenderer spriteRenderer;
     private Vector3 scalaOriginale;
@@ -33,7 +38,17 @@ public class DeleteButton : MonoBehaviour
 
     void OnMouseDown()
     {
-        Debug.Log("Cancellazione salvataggio");
-        PlayerPrefs.DeleteAll();
+        if (select == 0)
+        {
+            Debug.Log("Cancellazione salvataggio");
+            PlayerPrefs.DeleteAll();
+            KeyRemapper.notaKey = KeyRemapper.defaultNotaKey;
+            ScreenKeyLoader.load();
+        } else if (select == 1)
+        {
+            Debug.Log("Cancellazione tasti");
+            KeyRemapper.notaKey = KeyRemapper.defaultNotaKey;
+            ScreenKeyLoader.load();
+        }
     }
 }
