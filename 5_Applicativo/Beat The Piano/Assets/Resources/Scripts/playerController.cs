@@ -35,6 +35,10 @@ namespace BeatThePiano
                         activeNotes[key] = Time.time;
                         GameObject tasto = GameObject.Find(noteName);
                         tasto.transform.localScale = tasto.transform.localScale * 1.2f;
+                        GameObject suono =  GameObject.Find(noteName + "_Sound");
+                        AudioSource aud = suono.GetComponent<AudioSource>();
+                        aud.PlayOneShot(aud.clip);
+                        
                     }
 
                     //Controlla se l'utente a smesso di premere un tasto, allora istanzia una nota e la salva nella lista delle note suonate
