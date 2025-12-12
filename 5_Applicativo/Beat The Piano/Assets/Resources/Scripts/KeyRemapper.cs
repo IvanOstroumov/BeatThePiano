@@ -143,9 +143,9 @@ public class KeyRemapper : MonoBehaviour
                         GameObject remappingText = GameObject.Find("Remapping_Text");
                         Text text = remappingText.GetComponent<Text>();
                         text.text += keyBeingRemapped.key.ToString();
-                        remappingTile.transform.position = new Vector3(remappingTile.transform.position.x, -6.85f,
+                        remappingTile.transform.position = new Vector3(remappingTile.transform.position.x, -8f,
                             remappingTile.transform.position.z);
-                        remappingText.transform.position = new Vector3(remappingText.transform.position.x, -379f,
+                        remappingText.transform.position = new Vector3(remappingText.transform.position.x, -425f,
                             remappingText.transform.position.z);
                         PlayerPrefs.SetString(keyBeingRemapped.noteName, k.ToString());
                         PlayerPrefs.Save();
@@ -154,9 +154,10 @@ public class KeyRemapper : MonoBehaviour
                         waitingForKey = false;
                         keyBeingRemapped = null;
                         GameObject QoL =  GameObject.Find("QoL");
-                        foreach (Renderer r in QoL.GetComponentsInChildren<Renderer>())
+                        Graphic[] graphics = QoL.GetComponentsInChildren<Graphic>();
+                        foreach (var g in graphics)
                         {
-                            r.enabled = true;
+                            g.enabled = true;
                         }
                         ScreenKeyLoader.load();
                         break;
@@ -168,14 +169,15 @@ public class KeyRemapper : MonoBehaviour
                         GameObject remappingTile = GameObject.Find("Remapping_Tile");
                         GameObject remappingText = GameObject.Find("Remapping_Text");
                         Text text = remappingText.GetComponent<Text>();
-                        remappingTile.transform.position = new Vector3(remappingTile.transform.position.x, -6.85f,
+                        remappingTile.transform.position = new Vector3(remappingTile.transform.position.x, -8f,
                             remappingTile.transform.position.z);
-                        remappingText.transform.position = new Vector3(remappingText.transform.position.x, -379f,
+                        remappingText.transform.position = new Vector3(remappingText.transform.position.x, -425f,
                             remappingText.transform.position.z);
                         GameObject QoL =  GameObject.Find("QoL");
-                        foreach (Renderer r in QoL.GetComponentsInChildren<Renderer>())
+                        Graphic[] graphics = QoL.GetComponentsInChildren<Graphic>();
+                        foreach (var g in graphics)
                         {
-                            r.enabled = true;
+                            g.enabled = true;
                         }
                     }
                 }

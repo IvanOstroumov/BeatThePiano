@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,7 +13,9 @@ public class DeleteButton : MonoBehaviour
 
     [Header("What to delete?")] [Description("0: All, 1: KeyMap")]
     public int select;
-    
+
+    private List<string> notes;
+    private Dictionary<KeyCode, string> notaKey;
 
     private SpriteRenderer spriteRenderer;
     private Vector3 scalaOriginale;
@@ -22,6 +25,9 @@ public class DeleteButton : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = normalSprite;
         scalaOriginale = transform.localScale;
+        notes = KeyRemapper.notes;
+        notaKey = KeyRemapper.notaKey;
+        
     }
 
     void OnMouseEnter()
@@ -48,6 +54,19 @@ public class DeleteButton : MonoBehaviour
         {
             Debug.Log("Cancellazione tasti");
             KeyRemapper.notaKey = KeyRemapper.defaultNotaKey;
+            foreach (string note in notes)
+            {
+                if (PlayerPrefs.HasKey(note))
+                {
+                    string keyString = PlayerPrefs.GetString(note);
+
+                    //Prova a trasformare il contenuto della PlayerPref in un tasto KeyCode, se riesce lo cancella
+                    if (System.Enum.TryParse<KeyCode>(keyString, out KeyCode key))
+                    {
+                        PlayerPrefs.DeleteKey(note);
+                    }
+                }
+            }
             ScreenKeyLoader.load();
         }
     }

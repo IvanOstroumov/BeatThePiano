@@ -32,7 +32,7 @@ public class buttonHover : MonoBehaviour
     
     private Vector3 topStart, leftStart, rightStart, downStart;
 
-    void Start()
+    private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = normalSprite;
@@ -50,7 +50,6 @@ public class buttonHover : MonoBehaviour
         spriteRenderer.sprite = hoverSprite;
         transform.localScale = scalaOriginale * scaleFactor;
     }
-
     void OnMouseExit()
     {
         spriteRenderer.sprite = normalSprite;

@@ -132,6 +132,7 @@ namespace BeatThePiano
                     isPianoDeleted = true;
                     GameObject piano = GameObject.Find("Piano");
                     Destroy(piano);
+                    GameObject.Find("Results_Sound").GetComponent<AudioSource>().Play();
                 }
 
                 yield return null;

@@ -28,7 +28,8 @@ public class ScreenKeyLoader : MonoBehaviour
     {
         foreach (var i in KeyRemapper.notaKey)
         {
-            //Si prende il gameObject chiamato col nome della nota + _Text e si trova la sua componente text che poi si va a modificare
+            //Si prende il gameObject chiamato col nome della nota + _Text e si trova la sua
+            //componente text che poi si va a modificare
             GameObject qol = GameObject.Find(i.Value + "_Text");
             Text text = qol.GetComponent<Text>();
             if (keysWithLongNames.Contains(i.Key))

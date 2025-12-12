@@ -16,8 +16,4 @@ public class PlayMusic : MonoBehaviour
             GameObject.FindGameObjectWithTag("Music").GetComponent<MusicClass>().StopMusic();
         }
     }
-
-    void Update()
-    {
-    }
 }

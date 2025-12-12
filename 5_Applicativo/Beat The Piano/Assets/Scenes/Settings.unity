@@ -1073,7 +1073,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -6.85}
+  m_AnchoredPosition: {x: 0, y: -8}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &277458430
@@ -3175,7 +3175,7 @@ MonoBehaviour:
   normalSprite: {fileID: -1737651397864319592, guid: 1b7d9f6290a4b2a469f109c05f0b83b2, type: 3}
   hoverSprite: {fileID: -1737651397864319592, guid: 1b7d9f6290a4b2a469f109c05f0b83b2, type: 3}
   scaleFactor: 1.1
-  select: 0
+  select: 1
 --- !u!61 &716182940
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6597,7 +6597,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.3, y: -379}
+  m_AnchoredPosition: {x: -0.3, y: -425}
   m_SizeDelta: {x: 417.0968, y: 178.2533}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1548229853
